@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// To be replaced with image from database
 $images = [
     'images/image-1.jpg',
     'images/image-2.jpg',
@@ -22,6 +23,7 @@ $images = [
 
 ];
 
+// To be modified to use controller
 Route::get('/', function () use ($images) {
     return view('index', ['images' => $images]);
 });
