@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// To be replaced with image from database
-$images = [
-    'images/image-1.jpg',
-    'images/image-2.jpg',
-    'images/image-3.jpg',
-    'images/image-4.jpg',
-    'images/image-5.jpg',
+Route::get('/', [ImageController::class, 'index'])->name('home');
 
-];
-
-// To be modified to use controllers
-Route::get('/', function () use ($images) {
-    return view('index', ['images' => $images]);
-});
+Route::post('/', [ImageController::class, 'store']);
