@@ -3,13 +3,13 @@
 @section('content')
     @php
         // Set maximum numbers of displayed images
-        $previewLimit = 3;
+        $imageLimit = 5;
     @endphp
 
     {{-- Image preview --}}
     <div class="my-10 rounded-xl flex gap-3">
         @foreach ($images as $index => $image)
-            @if ($index < $previewLimit)
+            @if ($index < $imageLimit)
                 <label for="image-modal-{{ $index }}"
                     class="btn border-0 bg-[url('{{ asset($image) }}')] h-96 basis-1 grow rounded-xl bg-cover hover:basis-6/12 bg-center transition-all duration-300 ease-in-out cursor-pointer">
                 </label>
@@ -19,7 +19,7 @@
 
     <!-- Image modal -->
     @foreach ($images as $index => $image)
-        @if ($index < $previewLimit)
+        @if ($index < $imageLimit)
             <input type="checkbox" id="image-modal-{{ $index }}" class="modal-toggle" />
             <label for="image-modal-{{ $index }}" class="modal">
                 <div class="modal-box max-w-full p-0">

@@ -23,7 +23,7 @@ $images = [
 
 ];
 
-// To be modified to use controller
+// To be modified to use controllers
 Route::get('/', function () use ($images) {
     return view('index', ['images' => $images]);
 });
