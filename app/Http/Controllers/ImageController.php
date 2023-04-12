@@ -24,10 +24,11 @@ class ImageController extends Controller
 
     public function index()
     {
-        $images = Image::latest()->take(5)->get();
-        $imageUrls = $images->map(function ($image) {
-            return asset('storage/uploads/images/' . $image->name);
-        });
+        // $images = Image::latest()->take(5)->get();
+        // $imageUrls = $images->map(function ($image) {
+        //     return asset('storage/uploads/images/' . $image->name);
+        // });
+        $imageUrls = ['images/image-1.jpg', 'images/image-2.jpg', 'images/image-3.jpg', 'images/image-4.jpg', 'images/image-5.jpg'];
         return view('index', ['images' => $imageUrls]);
     }
 

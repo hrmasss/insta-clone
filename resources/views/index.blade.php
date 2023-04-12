@@ -15,6 +15,13 @@
                 </label>
             @endif
         @endforeach
+        <div
+            class="group btn border-0 h-96 basis-1 grow rounded-xl hover:basis-6/12 transition-all duration-300 ease-in-out">
+            <a href="/upload" class="block w-full h-full flex justify-center items-center p-5">
+                <img class="object-contain max-w-32 max-h-32 w-8 m-3 transition-all duration-300 group-hover:w-full"
+                    src="https://cdn-icons-png.flaticon.com/512/9380/9380151.png" alt="Add Image">
+            </a>
+        </div>
     </div>
 
     <!-- Image modal -->
@@ -30,12 +37,19 @@
     @endforeach
 
     <!-- Add image button -->
-    <form class="my-5 rounded-xl" action="/" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="file" id="fileInput" name="image" class="hidden" onchange="this.form.submit()">
-        <label for="fileInput" class="btn border-0 btn-block bg-gradient-to-r from-base-100 to-base-200 group h-fit">
-            <img class="w-8 m-3 transition-all duration-300 group-hover:w-16"
-                src="https://cdn-icons-png.flaticon.com/512/9380/9380151.png" alt="Add Image">
-        </label>
-    </form>
+    <div
+        class="my-5 rounded-xl bg-gradient-to-r from-base-100 to-base-200 p-5 text-lg tracking-[0.5rem] hover:tracking-[1rem] transition-all duration-300 ease-in-out">
+        <a href="/feed" class="uppercase font-medium text-center block text-secondary">
+            All Posts
+        </a>
+    </div>
 @endsection
+
+{{-- 
+<form class="my-5 rounded-xl" action="/" method="POST" enctype="multipart/form-data">
+    @csrf
+    <input type="file" id="fileInput" name="image" class="hidden" onchange="this.form.submit()">
+    <label for="fileInput" class="btn border-0 btn-block bg-gradient-to-r from-base-100 to-base-200">
+        View All
+    </label>
+</form> --}}

@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ImageController::class, 'index'])->name('home');
 
 Route::post('/', [ImageController::class, 'store']);
+
+Route::view('/feed', 'feed');

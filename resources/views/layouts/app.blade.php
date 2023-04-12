@@ -16,12 +16,16 @@
 <body class="w-screen">
     <div class="w-4/6 mx-auto">
         <div class="my-5 px-5 h-fit navbar bg-gradient-to-l from-base-100 to-base-200 flex justify-between rounded-xl">
-            <a href="#" class="">
-                <img class="w-8 transition-all duration-300 hover:w-10 cursor-default" src="https://cdn-icons-png.flaticon.com/512/1384/1384172.png" alt="Logo">
+            <a href="/">
+                <img class="w-8 transition-all duration-300 hover:w-10"
+                    src="https://cdn-icons-png.flaticon.com/512/1384/1384172.png" alt="Logo">
             </a>
-            <a href="#" class="">
-                <img class="w-8 transition-all duration-300 hover:w-10 cursor-default" src="https://cdn-icons-png.flaticon.com/512/875/875623.png" alt="Search">
-            </a>
+            <div class="flex gap-5">
+                <a href="/upload">
+                    <img class="w-8 transition-all duration-300 hover:w-10"
+                        src="https://cdn-icons-png.flaticon.com/512/1665/1665680.png" alt="Upload">
+                </a>
+            </div>
         </div>
         @yield('content')
     </div>
