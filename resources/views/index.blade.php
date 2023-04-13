@@ -44,12 +44,3 @@
         </a>
     </div>
 @endsection
-
-{{-- 
-<form class="my-5 rounded-xl" action="/" method="POST" enctype="multipart/form-data">
-    @csrf
-    <input type="file" id="fileInput" name="image" class="hidden" onchange="this.form.submit()">
-    <label for="fileInput" class="btn border-0 btn-block bg-gradient-to-r from-base-100 to-base-200">
-        View All
-    </label>
-</form> --}}

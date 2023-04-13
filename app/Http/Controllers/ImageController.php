@@ -9,7 +9,10 @@ class ImageController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate(['image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120']);
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'caption' => 'nullable|string|max:240',
+        ]);
 
         $imageName = time() . '.' . $request->image->extension();
 
@@ -17,19 +20,25 @@ class ImageController extends Controller
 
         $image = new Image;
         $image->name = $imageName;
+        $image->caption = $request->caption;
         $image->save();
 
-        return redirect()->route('home');
+        return redirect()->route('feed');
     }
 
     public function index()
     {
-        // $images = Image::latest()->take(5)->get();
-        // $imageUrls = $images->map(function ($image) {
-        //     return asset('storage/uploads/images/' . $image->name);
-        // });
-        $imageUrls = ['images/image-1.jpg', 'images/image-2.jpg', 'images/image-3.jpg', 'images/image-4.jpg', 'images/image-5.jpg'];
+        $images = Image::latest()->take(5)->get();
+        $imageUrls = $images->map(function ($image) {
+            return asset('storage/uploads/images/' . $image->name);
+        });
         return view('index', ['images' => $imageUrls]);
+    }
+
+    public function showFeed()
+    {
+        $images = Image::all();
+        return view('feed', ['images' => $images]);
     }
 
 }

@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ImageController::class, 'index'])->name('home');
 
-Route::post('/', [ImageController::class, 'store']);
+Route::post('/upload', [ImageController::class, 'store']);
 
-Route::view('/feed', 'feed');
+Route::get('/feed', [ImageController::class, 'showFeed'])->name('feed');
+
+Route::view('/upload', 'upload');

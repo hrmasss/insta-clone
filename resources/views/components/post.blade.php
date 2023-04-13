@@ -1,4 +1,4 @@
-<div class="bg-gradient-to-r from-base-100 to-base-200 rounded-xl p-20 my-5">
+<div class="bg-gradient-to-b from-base-100 to-base-200 rounded-xl p-20 my-5">
     <img class="rounded-xl" src="{{ $url }}" alt="{{ $caption }}">
 
     <div class="flex justify-between my-3">
